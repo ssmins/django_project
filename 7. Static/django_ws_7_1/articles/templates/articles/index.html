@@ -1,0 +1,26 @@
+
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>나만의 SNS 서비스 </h1>
+<a href="{% url "articles:create" %}">[CREATE]</a> <br>
+
+<img src="{% static "board.jpg" %}" alt="board"> <br>
+
+{% for article in articles %}
+  <a href="{% url "articles:detail" article.pk %}">{{article.title}}</a>
+  <hr>
+{% endfor %}
+
+{% endblock content %}
+
+
+
+
+
+
+
